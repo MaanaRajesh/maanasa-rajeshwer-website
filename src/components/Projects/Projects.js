@@ -2,12 +2,14 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+
+// TODO: Replace these with your own project images (add files under src/Assets/Projects/)
+import reidImg from "../../Assets/Projects/reid.png";
+import bevImg from "../../Assets/Projects/bev_forklift.png";
+import vaeImg from "../../Assets/Projects/vae_il.png";
+import frankaImg from "../../Assets/Projects/franka_vision.png";
+import f1tenthImg from "../../Assets/Projects/f1tenth.png";
+import garmentImg from "../../Assets/Projects/garment.png";
 
 function Projects() {
   return (
@@ -15,75 +17,82 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Selected <strong className="purple">Projects</strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          A few projects across embodied AI, perception, and interaction. Each card links to code, reports, or demos.
         </p>
+
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {/* 1) ReID / Identity-preserving segmentation */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={reidImg}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Identity-Preserving Video Segmentation"
+              description="Designed a tracking/segmentation pipeline aimed at maintaining object identity through motion, occlusion, and appearance changes. Focused on robust temporal association and evaluation on challenging sequences."
+              ghLink="YOUR_GITHUB_LINK_HERE"
+              demoLink="YOUR_DEMO_LINK_HERE"
             />
           </Col>
 
+          {/* 2) BEV Multi-camera forklift detection */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={bevImg}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="BEV Multi-Camera Forklift Detection"
+              description="Course project studying BEV-based multi-camera detection for warehouse environments. Emphasis on architecture understanding, experiment analysis, and clear technical documentation."
+              ghLink="https://github.com/prasadpr09/BEV-Fusion-with-detr3D"
+              demoLink="OPTIONAL_DEMO_LINK_HERE"
             />
           </Col>
 
+          {/* 3) VAE + Imitation learning + language goals */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={vaeImg}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="VAE-Augmented Imitation Learning + Language Goals"
+              description="Trained behavioral cloning policies for pick-and-place with compact latent trajectory representations, and used a language model to translate natural-language instructions into constraint-compliant 3D goals for evaluation."
+              ghLink="YOUR_GITHUB_LINK_HERE"
+              demoLink="YOUR_DEMO_LINK_HERE"
             />
           </Col>
 
+          {/* 4) Franka vision-based manipulation */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={frankaImg}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Vision-Based Manipulation with Franka"
+              description="Built a manipulation pipeline combining visual sensing with control to execute structured pick/place behaviors. Focused on calibration, pose estimation, and reliable closed-loop execution."
+              ghLink="YOUR_GITHUB_LINK_HERE"
+              demoLink="YOUR_DEMO_LINK_HERE"
             />
           </Col>
 
+          {/* 5) F1TENTH / Autonomous racing */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={f1tenthImg}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              title="F1TENTH Autonomous Racing Stack"
+              description="Implemented and tested components for autonomous driving in ROS 2, including safety logic, planning/control integration, and sim-to-real workflows."
+              ghLink="YOUR_GITHUB_LINK_HERE"
+              demoLink="YOUR_DEMO_LINK_HERE"
             />
           </Col>
 
+          {/* 6) Garment / deformables / interaction */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={garmentImg}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%. Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="Deformables & Wearable Interaction (In Progress)"
+              description="Exploring perception and representations for deformable objects and garments, with an interest in touch/feedback-driven interaction. Prototyping datasets, keypoints, and evaluation protocols."
+              ghLink="YOUR_GITHUB_LINK_HERE"
+              demoLink="OPTIONAL_DEMO_LINK_HERE"
             />
           </Col>
         </Row>
