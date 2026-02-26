@@ -3,48 +3,37 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
-import Aboutcard from "./AboutCard";
+import AboutCard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 
 function About() {
   return (
     <>
-      {" "}
       <Particle />
       <Container fluid className="about-section">
         <Container>
-          <Row style={{ justifyContent: "center", padding: "10px" }}>
-            <Col
-              md={7}
-              style={{
-                justifyContent: "center",
-                paddingTop: "30px",
-                paddingBottom: "50px",
-              }}
-            >
-              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                Know Who <strong className="purple">I'M</strong>
+          <Row className="align-items-center" style={{ paddingTop: "30px" }}>
+            <Col md={7} style={{ paddingBottom: "40px" }}>
+              <h1 style={{ fontSize: "2.2em", marginBottom: "18px" }}>
+                About
               </h1>
-              <Aboutcard />
+              <AboutCard />
             </Col>
-            <Col
-              md={5}
-              style={{ paddingTop: "120px", paddingBottom: "50px" }}
-              className="about-img"
-            >
+
+            <Col md={5} className="about-img" style={{ paddingBottom: "40px" }}>
               <img src={laptopImg} alt="about" className="img-fluid" />
             </Col>
           </Row>
-          <h1 className="project-heading">
-            Professional <strong className="purple">Skillset </strong>
-          </h1>
 
+          <h2 className="project-heading" style={{ marginTop: "10px" }}>
+            Professional <strong className="purple">Skillset</strong>
+          </h2>
           <Techstack />
 
-          <h1 className="project-heading">
-            <strong className="purple">Tools</strong> I use
-          </h1>
+          <h2 className="project-heading" style={{ marginTop: "30px" }}>
+            Tools <strong className="purple">I use</strong>
+          </h2>
           <Toolstack />
 
           <Github />
