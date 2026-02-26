@@ -13,38 +13,28 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              I build robotics systems at the intersection of{" "}
+              <b className="purple">Embodied AI</b>,{" "}
+              <b className="purple">multimodal perception</b>, and{" "}
+              <b className="purple">physical interaction</b>.
               <br />
               <br />
-              I’m proficient in
-              <i>
-                <b className="purple">
-                  {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
-                </b>
-              </i>
-              — and I enjoy working across both backend and frontend stacks.
+              I’m drawn to problems where a robot has to stay{" "}
+              <b className="purple">robust under ambiguity</b>—tracking identity through
+              motion and occlusion, learning from demonstrations, and generalizing across
+              new layouts and sensor conditions.
               <br />
               <br />
-              My key areas of interest include developing
-              <i>
-                <b className="purple">
-                  {" "}
-                  Web Applications, Blockchain Solutions,{" "}
-                </b>
-              </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              Technically, I work mostly in <b className="purple">Python/C++</b> with{" "}
+              <b className="purple">PyTorch</b> and <b className="purple">ROS</b>, and I
+              enjoy building end-to-end pipelines that connect{" "}
+              <b className="purple">perception</b> to <b className="purple">control</b>.
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
-              <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
-              </i>
+              Longer-term, I’m excited about where robotics is heading: systems that learn
+              skills in simulation, transfer reliably to the real world, and interact with
+              humans through{" "}
+              <b className="purple">touch, form factor, and feedback</b>—not just screens.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

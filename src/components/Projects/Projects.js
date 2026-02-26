@@ -2,12 +2,14 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+
+// TODO: Replace these with your own project images (add files under src/Assets/Projects/)
+import reidImg from "../../Assets/Projects/reid.png";
+import bevImg from "../../Assets/Projects/bev_forklift.png";
+import vaeImg from "../../Assets/Projects/vae_il.png";
+import frankaImg from "../../Assets/Projects/franka_vision.png";
+import f1tenthImg from "../../Assets/Projects/f1tenth.png";
+import ppoImg from "../../Assets/Projects/ppo.png";
 
 function Projects() {
   return (
@@ -15,78 +17,81 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Selected <strong className="purple">Projects</strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          A few projects across embodied AI, perception, and interaction. Each card links to code, reports, or demos.
         </p>
+
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {/* 1) ReID / Identity-preserving segmentation */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={reidImg}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Spatially-Aware ReID for Identity-Preserving Video Segmentation"
+              description="Training-free spatial re-identification pipeline combining SAM masklets, RAFT optical flow, spatial proximity (α=0.4), and tracklet-based temporal reasoning. Eliminated ID switches in identical-object sequences through occlusions and rapid motion (≤400 px inter-frame centroid displacement)."
+              ghLink="https://github.com/MaanaRajesh/sam2-spatial-reid"
+              demoLink="https://github.com/MaanaRajesh/maanarajesh.github.io/blob/master/src/components/Projects/Projects.js"
             />
           </Col>
 
+          {/* 2) VAE + Imitation learning + language goals */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={vaeImg}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="VAE-Augmented Imitation Learning + LLM Goal Generation"
+              description="Behavioral cloning for pick-and-place with compact VAE latent trajectory representations. Integrated language-based goal parsing to generate constraint-compliant 3D placement targets, reducing reliance on visual inputs."
+              ghLink="https://github.com/MaanaRajesh/vae-augmented-imitation-learning"
+              demoLink="https://github.com/MaanaRajesh/vae-augmented-imitation-learning/tree/main/reports"
             />
           </Col>
 
+          {/* 3) F1TENTH / Autonomous racing */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={f1tenthImg}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="F1TENTH Autonomous Racing (ROS 2)"
+              description="Developing and testing ROS 2 perception–planning–control components under real-time constraints, with sim-to-real workflows and safety-focused integration."
+              ghLink="https://github.com/cedrichld/f1tenth_system_team5/tree/humble-devel/f1tenth_stack"
             />
           </Col>
 
+          {/* 4) Franka vision-based manipulation */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={frankaImg}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Vision-Based Manipulation with Franka"
+              description="Built a manipulation pipeline combining visual sensing with control to execute structured pick/place behaviors. Focused on calibration, pose estimation, and reliable closed-loop execution."
+              ghLink="https://github.com/MaanaRajesh/franka-vision-manipulation"
+              demoLink="https://github.com/MaanaRajesh/franka-vision-manipulation/blob/main/reports/final_report.pdf"
             />
           </Col>
 
+          {/* 5) PPO Continuous Control */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={ppoImg}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              title="Policy Learning for Continuous Robot Control (PPO)"
+              description="Implemented PPO in PyTorch for continuous control of a MuJoCo bipedal walker. Trained stochastic policies for 1M+ timesteps and analyzed learning stability, exploration dynamics, and failure recovery in closed-loop control."
+              ghLink="https://github.com/MaanaRajesh/ppo-continuous-control/tree/main"
             />
           </Col>
 
+          {/* 6) BEV Multi-camera forklift detection */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={bevImg}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="BEV Early-Fusion Multi-Camera Detection for Identical Forklifts"
+              description="Built a synthetic multi-camera warehouse dataset in Isaac Sim (1200 frames, 2 cameras) with nuScenes-format conversion and calibrated annotations. Designed a BEV detector with attention-based camera fusion: 98% AP @ IoU=0.5 and 0.92 cross-camera IoU consistency (+25% AP over 2D baseline)."
             />
           </Col>
+
         </Row>
       </Container>
     </Container>

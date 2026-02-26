@@ -8,37 +8,42 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Soumyajit Behera</span>{" "}
-            from <span className="purple">Bhubaneswar, India</span>.
+            Hi! I’m <span className="purple">Maanasa Rajeshwer</span>.
             <br />
-            I’m currently working as a{" "}
-            <span className="purple">Software Developer</span> at{" "}
-            <span className="purple">Juspay</span>.
-            <br />I hold an Integrated M.Sc. (IMSc) in{" "}
-            <span className="purple">Mathematics and Computing</span> from{" "}
-            <span className="purple">BIT Mesra</span>.
+            I’m a <span className="purple">Robotics M.S.E.</span> student at{" "}
+            <span className="purple">UPenn</span> focused on{" "}
+            <span className="purple">Embodied AI</span> and{" "}
+            <span className="purple">multimodal perception</span>.
             <br />
             <br />
-            Outside of coding, I love engaging in activities that keep me
-            creative and inspired:
+            I build systems that connect{" "}
+            <span className="purple">vision</span>,{" "}
+            <span className="purple">learning</span>, and{" "}
+            <span className="purple">physical interaction</span> — especially for
+            deformables and human-centered hardware (think{" "}
+            <span className="purple">haptics, wearables, and expressive tech</span>).
+            <br />
+            <br />
+            Recently, I’ve worked on identity-preserving video segmentation,
+            BEV-based multi-camera detection, and imitation learning pipelines.
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games 🎮
+              <ImPointRight /> Embodied AI + robot learning
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs ✍️
+              <ImPointRight /> Multimodal perception (video, flow, tracking)
             </li>
             <li className="about-activity">
-              <ImPointRight /> Traveling and Exploring New Places 🌍
+              <ImPointRight /> Haptics + wearables + interactive systems
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "Build systems that can perceive, move, and feel — with humans in mind."
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <footer className="blockquote-footer">Maanasa</footer>
         </blockquote>
       </Card.Body>
     </Card>
