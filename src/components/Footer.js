@@ -1,11 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
 
   return (
     <Container fluid className="footer">
@@ -20,28 +19,42 @@ function Footer() {
 
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
+            {/* Email */}
+            <li className="social-icons">
+              <a
+                href="mailto:maanasa@seas.upenn.edu"
+                style={{ color: "white" }}
+                aria-label="Email"
+              >
+                <AiOutlineMail />
+              </a>
+            </li>
+
+            {/* GitHub */}
             <li className="social-icons">
               <a
                 href="https://github.com/MaanaRajesh"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <AiFillGithub />
               </a>
             </li>
 
+            {/* LinkedIn */}
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/maanasa-rajeshwer/"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
               </a>
             </li>
-                  
           </ul>
         </Col>
       </Row>
