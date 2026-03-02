@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-humanrobot.jpeg";
+import home_humanrobot from "../../Assets/home-humanrobot.jpeg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
@@ -25,7 +25,7 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
-                src={homeLogo}
+                src={home_humanrobot}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}

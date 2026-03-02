@@ -1,4 +1,9 @@
+/* =========================================================
+   THEME TOKENS (palette + semantic roles)
+   ========================================================= */
+
 html {
+  /* palette */
   --rust: #95380D;
   --olive: #C6BA4C;
   --cream: #F5ECAB;
@@ -9,8 +14,9 @@ html {
   --accent: var(--clay);
   --accent-2: var(--olive);
   --text-accent: var(--rust);
+  --imp-text-color: var(--clay);
 
-  /* backgrounds */
+  /* gradients */
   --section-background-color: linear-gradient(
     to bottom left,
     rgba(71, 15, 12, 0.92),
@@ -22,30 +28,27 @@ html {
     rgba(71, 15, 12, 0.65),
     rgba(17, 16, 16, 0.70)
   );
-
-  /* replaces old purple */
-  --imp-text-color: var(--clay);
 }
 
-
-
+/* helper class kept for compatibility with template */
 .purple {
   color: var(--imp-text-color) !important;
 }
 
-button:focus {
+/* remove bootstrap focus glow */
+button:focus,
+.btn:focus {
+  outline: none !important;
   box-shadow: none !important;
 }
 
-/* --------- */
-/*  Preloader */
-/* --------- */
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
 #preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 999999;
   background-color: #0c0513;
   background-image: url(./Assets/pre.svg);
@@ -57,88 +60,67 @@ button:focus {
   opacity: 0;
 }
 
-/* #preloader-none {
-  opacity: 0;
-  display: none;
-} */
-
 #no-scroll {
   overflow: hidden;
   height: 100vh;
 }
 
-/* --------- */
-/*Scrollbar   */
-/* --------- */
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
 
 ::-webkit-scrollbar {
   width: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: rgba(71, 15, 12, 0.35);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgba(200, 120, 57, 0.85);
   border-radius: 12px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(149, 56, 13, 0.90);
   border-radius: 12px;
 }
 
-/* --------- */
-/* Navbar Section  */
-/* --------- */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: fixed !important;
+  padding: 0.3rem 2rem !important;
+  font-size: 1.2rem !important;
+  transition: all 0.3s ease-out 0s !important;
+}
+
 .sticky {
   background-color: #1b1a2ea9 !important;
-  transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
 }
 
-.navbar {
-  position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
+.navbar-brand {
+  color: rgb(250, 250, 250) !important;
 }
 
+/* Logo sizing (prevents squish) */
+.logo {
+  height: 42px !important;
+  width: 42px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* hamburger */
 .navbar-toggler {
   position: relative !important;
   background-color: transparent !important;
   border-color: transparent !important;
-}
-
-.navbar-toggler span {
-  display: block !important;
-  background-color: var(--rust) !important;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
-}
-
-.navbar-nav .nav-item a::after {
-  content: "";
-  position: relative;
-  display: block;
-  height: 5px;
-  width: 0;
-  border-radius: 16px;
-  background: var(--cream);
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
 }
 
 .navbar-toggler:focus,
@@ -146,9 +128,19 @@ button:focus {
   outline: 0 !important;
 }
 
+.navbar-toggler span {
+  display: block !important;
+  background-color: var(--rust) !important;
+  height: 4px !important;
+  width: 27px !important;
+  margin: 5px 0 !important;
+  transform: rotate(0deg) !important;
+  left: 0 !important;
+  opacity: 1 !important;
+}
+
 .navbar-toggler span:nth-child(1),
 .navbar-toggler span:nth-child(3) {
-  transition: transform 0.35s ease-in-out !important;
   transition: transform 0.35s ease-in-out !important;
 }
 
@@ -174,38 +166,10 @@ button:focus {
   opacity: 0.9 !important;
 }
 
-@media (max-width: 767px) {
-  .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important;
-  }
-}
-.navbar-brand {
-  color: rgb(250, 250, 250) !important;
-}
-
-.logo {
-  height: 42px !important;
-  width: 42px !important;
-  object-fit: contain;
-  display: block;
-}
-
+/* nav links */
 .navbar-nav .nav-link {
   color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-.nav-link {
   padding: 0.8rem 1rem !important;
-}
-
-@media (max-width: 767px) {
-  .nav-link {
-    padding: 0.7rem 1rem !important;
-  }
 }
 
 .navbar-nav .nav-item {
@@ -220,6 +184,7 @@ button:focus {
   z-index: 1;
 }
 
+/* underline pill on hover */
 .navbar-nav .nav-item a::after {
   content: "";
   position: relative;
@@ -238,96 +203,75 @@ button:focus {
   width: 100%;
 }
 
-/* --------- */
-/* Home section */
-/* --------- */
-.wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
-  display: inline-block;
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    background-color: #181a27 !important;
+  }
+
+  .nav-link {
+    padding: 0.7rem 1rem !important;
+  }
 }
 
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  } /* Reset for the last half to pause */
-  100% {
-    transform: rotate(0deg);
-  }
-}
+/* =========================================================
+   PARTICLES BACKGROUND
+   ========================================================= */
+
 #tsparticles {
   position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
-/* Constrain hero width */
-.home-header {
-  max-width: 620px;
-  padding-top: 120px !important;
-}
+/* =========================================================
+   HOME / HERO
+   ========================================================= */
 
 .home-section {
   position: relative;
   z-index: -1;
-  /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */
+  /* if you want hero bg, uncomment:
+  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
+  */
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding: 30px 0 !important;
 }
 
 .home-content {
   padding: 12rem 0 4rem !important;
   text-align: left;
+  color: whitesmoke;
 }
 
-/* Subtitle styling */
-.hero-subtitle {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: rgba(245, 236, 171, 0.85); /* softer cream */
-  max-width: 480px;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.4s;
+/* wave (optional - safe to delete if you remove emoji) */
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
-.heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
+/* Constrain hero text width */
+.home-header {
+  max-width: 620px;
+  padding-top: 120px !important;
 }
 
 /* Name styling */
@@ -344,6 +288,29 @@ button:focus {
   color: var(--cream);
 }
 
+/* Subtitle styling + fade up */
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(245, 236, 171, 0.85);
+  max-width: 480px;
+  line-height: 1.6;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* typewriter styles (you can delete these once you remove the component everywhere) */
 .Typewriter__wrapper {
   font-size: 2.2em !important;
   color: var(--accent-2) !important;
@@ -365,22 +332,13 @@ button:focus {
   }
 }
 
-.myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
-}
-
-@media (max-width: 767px) {
-  .myAvtar {
-    padding-top: 2em !important;
-    padding-bottom: 2em !important;
-  }
-}
+/* =========================================================
+   HOME ABOUT + SOCIAL
+   ========================================================= */
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding: 70px 0 !important;
 }
 
 .home-about-description {
@@ -396,6 +354,18 @@ button:focus {
   text-align: left;
 }
 
+.myAvtar {
+  justify-content: center !important;
+  padding-top: 9em !important;
+}
+
+@media (max-width: 767px) {
+  .myAvtar {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+  }
+}
+
 .home-about-social {
   text-align: center !important;
   padding-top: 25px;
@@ -408,6 +378,11 @@ button:focus {
   display: inline-block !important;
   position: relative !important;
   padding-inline-start: 0 !important;
+}
+
+.social-icons {
+  display: inline-block !important;
+  padding: 0 15px;
 }
 
 .home-social-icons {
@@ -426,10 +401,7 @@ button:focus {
 .home-social-icons::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   border-radius: 50%;
   background: var(--olive);
   transition: 0.5s;
@@ -448,62 +420,45 @@ button:focus {
   text-shadow: none;
 }
 
-.social-icons {
-  display: inline-block !important;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .icon-colour {
   color: var(--rust) !important;
 }
 
-/* --------- */
-/* Footer */
-/* --------- */
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .footer {
   background-color: rgba(71, 15, 12, 0.95);
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
-}
-.footer-copywright {
-  text-align: center !important;
+  padding-bottom: 8px !important;
 }
 
+.footer-copywright,
 .footer-body {
-  z-index: 1;
   text-align: center !important;
-}
-
-@media (max-width: 767px) {
-  .footer-copywright {
-    text-align: center !important;
-  }
-
-  .footer-body {
-    text-align: center !important;
-  }
 }
 
 .footer h3 {
   font-size: 1em;
   color: white !important;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
+  margin: 0.5em 0 !important;
 }
+
 .footer-icons {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
+  margin: 0.5em 0 !important;
   padding: 0 !important;
 }
 
 .blockquote-footer {
   color: rgba(245, 236, 171, 0.75) !important;
 }
-/* --------- */
-/* Projects */
-/* --------- */
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
 .project-section {
   position: relative !important;
   padding-top: 150px !important;
@@ -512,84 +467,27 @@ button:focus {
 }
 
 .project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
+  padding: 50px 25px !important;
   height: auto !important;
 }
 
+/* UPDATED: modern hover pop */
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(71, 15, 12, 0.35) !important;
   color: white !important;
   background-color: transparent !important;
   opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
   height: 100% !important;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+  will-change: transform;
 }
+
 .project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(200, 120, 57, 0.35) !important;
+  transform: translateY(-6px) scale(1.03) !important;
+  box-shadow: 0 12px 28px rgba(200, 120, 57, 0.35) !important;
 }
 
-.blog-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
-}
-
-.blog-card-view {
-  background-color: transparent !important;
-  box-shadow: 0 3px 3px 2px rgba(71, 15, 12, 0.30) !important;
-  color: white !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
-}
-
-.blog-link {
-  color: white !important;
-  text-decoration: none !important;
-}
-
-.blog-link:hover {
-  cursor: pointer !important;
-}
-
-.blog-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px rgba(200, 120, 57, 0.40) !important;
-}
-
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
-}
-
-.blog-img {
-  padding: 0px !important;
-  opacity: 0.8 !important;
-  border-radius: 0px !important;
-}
-
-.btn-primary {
-  background-color: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-}
-
-.btn-primary:hover {
-  background-color: var(--rust) !important;
-  border-color: var(--rust) !important;
-}
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
@@ -603,15 +501,70 @@ button:focus {
   word-spacing: normal;
 }
 
-/* --------- */
-/* About */
-/* --------- */
+/* buttons */
+.btn-primary {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--rust) !important;
+  border-color: var(--rust) !important;
+}
+
+/* =========================================================
+   BLOG (if used)
+   ========================================================= */
+
+/* .blog-card {
+  padding: 50px 25px !important;
+  height: auto !important;
+}
+
+.blog-card-view {
+  background-color: transparent !important;
+  box-shadow: 0 3px 3px 2px rgba(71, 15, 12, 0.30) !important;
+  color: white !important;
+  transition: all 0.5s ease 0s !important;
+  height: 100% !important;
+}
+
+.blog-card-view:hover {
+  transform: scale(1.02) !important;
+  overflow: hidden !important;
+  box-shadow: 0 3px 3px 5px rgba(200, 120, 57, 0.40) !important;
+}
+
+.blog-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.blog-link:hover {
+  cursor: pointer !important;
+}
+
+.card-img-top {
+  padding: 20px !important;
+  opacity: 0.8 !important;
+  border-radius: 10px !important;
+}
+
+.blog-img {
+  padding: 0px !important;
+  opacity: 0.8 !important;
+  border-radius: 0px !important;
+} */
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .about-section {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
-  /* background-image: var(--section-background-color) !important; */
   color: white !important;
 }
 
@@ -626,14 +579,20 @@ button:focus {
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 24px !important;
-  outline: 1.7px solid rgba(198, 186, 76, 0.55) !important; /* olive */
-  box-shadow: 4px 5px 4px 3px rgba(71, 15, 12, 0.20) !important; /* maroon */
+
+  outline: 1.7px solid rgba(198, 186, 76, 0.55) !important;
+  box-shadow: 4px 5px 4px 3px rgba(71, 15, 12, 0.20) !important;
+
   overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
   width: fit-content !important;
   cursor: pointer !important;
   transition: outline-color 0.3s, outline-width 0.3s, transform 0.3s;
   color: white;
+}
+
+.tech-icons:hover {
+  transform: scale(1.05) !important;
+  outline: 2.2px solid rgba(200, 120, 57, 0.70) !important;
 }
 
 .tech-icons-text {
@@ -643,17 +602,6 @@ button:focus {
   color: white;
 }
 
-@media (max-width: 767px) {
-  .tech-icons {
-    margin: 10px !important;
-  }
-}
-
-.tech-icons:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  outline: 2.2px solid rgba(200, 120, 57, 0.70) !important;
-}
 .tech-icon-images {
   height: 1.6rem;
   line-height: 1.6 !important;
@@ -675,10 +623,14 @@ button:focus {
   .about-img {
     padding-top: 0 !important;
   }
+  .tech-icons {
+    margin: 10px !important;
+  }
 }
-/* --------- */
-/* Resume */
-/* --------- */
+
+/* =========================================================
+   RESUME
+   ========================================================= */
 
 .resume-section {
   position: relative !important;
@@ -689,8 +641,7 @@ button:focus {
 }
 
 .resume {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0;
   justify-content: center;
 }
 
@@ -703,21 +654,17 @@ button:focus {
 }
 
 @media (max-width: 767px) {
-  .resume-left {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-
+  .resume-left,
   .resume-right {
     padding-right: 15px !important;
     padding-left: 15px !important;
   }
 }
+
 .resume .resume-title {
   font-size: 2em;
   font-weight: 700;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 0;
 }
 
 .resume .resume-item {
@@ -763,41 +710,7 @@ button:focus {
   border: 2px solid rgba(198, 186, 76, 0.8);
 }
 
-.like-item {
-  padding-top: 10px !important;
-  font-size: 1.1em !important;
-  font-family: sans-serif !important;
-}
-
-.like-btn {
-  background-color: var(--rust) !important;
-  border-color: var(--rust) !important;
-  padding: 0.25rem 0.98rem !important;
-  border-radius: 5px !important;
-  line-height: 1.4 !important;
-  transition: 0.3s ease !important;
-}
-
-.like-btn:hover {
-  transform: translateY(-2px) !important;
-  background-color: var(--maroon) !important;
-  border-color: var(--maroon) !important;
-}
-
-.animate-like {
-  animation-name: likeAnimation;
-  animation-fill-mode: forwards;
-  animation-duration: 0.85s;
-}
-@keyframes likeAnimation {
-  0% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
+/* GitHub buttons */
 .fork-btn {
   font-size: 1.1em !important;
   padding-top: 10px !important;
@@ -816,6 +729,7 @@ button:focus {
   background-color: var(--maroon) !important;
   border-color: var(--maroon) !important;
 }
+
 .fork-btn-inner::after {
   display: none !important;
 }
