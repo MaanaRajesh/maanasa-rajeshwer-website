@@ -2,17 +2,17 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 
 // Inline SVG imports (Approach 1)
-import { ReactComponent as CppIcon } from "../../assets/techicons/C++.svg";
-import { ReactComponent as PythonIcon } from "../../assets/techicons/Python.svg";
-import { ReactComponent as DockerIcon } from "../../assets/techicons/Docker.svg";
-import { ReactComponent as GitIcon } from "../../assets/techicons/Git.svg";
+import { ReactComponent as CppIcon } from "../../assets/TechIcons/C++.svg";
+import { ReactComponent as PythonIcon } from "../../assets/TechIcons/Python.svg";
+import { ReactComponent as DockerIcon } from "../../assets/TechIcons/Docker.svg";
+import { ReactComponent as GitIcon } from "../../assets/TechIcons/Git.svg";
 
-import { ReactComponent as JsIcon } from "../../assets/techicons/Javascript.svg";
-import { ReactComponent as TsIcon } from "../../assets/techicons/Typescript.svg";
-import { ReactComponent as ReactIcon } from "../../assets/techicons/React.svg";
-import { ReactComponent as NodeIcon } from "../../assets/techicons/Node.svg";
+import { ReactComponent as JsIcon } from "../../assetsTechIcons/Javascript.svg";
+import { ReactComponent as TsIcon } from "../../assets/TechIcons/Typescript.svg";
+import { ReactComponent as ReactIcon } from "../../assets/TechIcons/React.svg";
+import { ReactComponent as NodeIcon } from "../../assets/TechIcons/Node.svg";
 
-import { ReactComponent as AwsIcon } from "../../assets/techicons/AWS.svg";
+import { ReactComponent as AwsIcon } from "../../assets/TechIcons/AWS.svg";
 
 function Techstack() {
   return (
