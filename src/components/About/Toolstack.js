@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-// Inline-safe SVGs
-import { ReactComponent as VsCodeIcon } from "../../Assets/TechIcons/vscode.svg";
-import { ReactComponent as DockerIcon } from "../../Assets/TechIcons/Docker.svg";
+// SVGs (import as URL, render with <img>)
+import vscodeSvg from "../../Assets/TechIcons/vscode.svg";
+import dockerSvg from "../../Assets/TechIcons/Docker.svg";
 
 // PNGs
 import ubuntuPng from "../../Assets/TechIcons/ubuntu.png";
@@ -16,22 +16,26 @@ import rvizPng from "../../Assets/TechIcons/rviz.png";
 
 function Toolstack() {
   const items = [
-    { label: "Ubuntu", node: <img src={ubuntuPng} alt="Ubuntu" className="tech-icon-img" /> },
-    { label: "VS Code", node: <VsCodeIcon className="tech-icon-svg" aria-label="VS Code" /> },
-    { label: "GitHub", node: <img src={githubPng} alt="GitHub" className="tech-icon-img" /> },
-    { label: "Docker", node: <DockerIcon className="tech-icon-svg" aria-label="Docker" /> },
-    { label: "Conda", node: <img src={condaPng} alt="Conda" className="tech-icon-img" /> },
-    { label: "SSH", node: <img src={sshPng} alt="SSH" className="tech-icon-img" /> },
-    { label: "Gazebo", node: <img src={gazeboPng} alt="Gazebo" className="tech-icon-img" /> },
-    { label: "Isaac Sim", node: <img src={isaacPng} alt="Isaac Sim" className="tech-icon-img" /> },
-    { label: "rviz", node: <img src={rvizPng} alt="rviz" className="tech-icon-img" /> },
+    { label: "Ubuntu", src: ubuntuPng, type: "png" },
+    { label: "VS Code", src: vscodeSvg, type: "svg" },
+    { label: "GitHub", src: githubPng, type: "png" },
+    { label: "Docker", src: dockerSvg, type: "svg" },
+    { label: "Conda", src: condaPng, type: "png" },
+    { label: "SSH", src: sshPng, type: "png" },
+    { label: "Gazebo", src: gazeboPng, type: "png" },
+    { label: "Isaac Sim", src: isaacPng, type: "png" },
+    { label: "rviz", src: rvizPng, type: "png" },
   ];
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {items.map((item) => (
         <Col key={item.label} xs={6} md={3} className="tech-icons">
-          {item.node}
+          <img
+            src={item.src}
+            alt={item.label}
+            className={item.type === "svg" ? "tech-icon-svg" : "tech-icon-img"}
+          />
           <div className="tech-icons-text">{item.label}</div>
         </Col>
       ))}
