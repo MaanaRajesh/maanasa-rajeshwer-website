@@ -1,18 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-// Inline SVG imports (Approach 1)
-import { ReactComponent as CppIcon } from "../../assets/TechIcons/C++.svg";
-import { ReactComponent as PythonIcon } from "../../assets/TechIcons/Python.svg";
-import { ReactComponent as DockerIcon } from "../../assets/TechIcons/Docker.svg";
-import { ReactComponent as GitIcon } from "../../assets/TechIcons/Git.svg";
+import { ReactComponent as CppIcon } from "../../Assets/TechIcons/C++.svg";
+import { ReactComponent as PythonIcon } from "../../Assets/TechIcons/Python.svg";
+import { ReactComponent as DockerIcon } from "../../Assets/TechIcons/Docker.svg";
+import { ReactComponent as GitIcon } from "../../Assets/TechIcons/Git.svg";
 
-import { ReactComponent as JsIcon } from "../../assetsTechIcons/Javascript.svg";
-import { ReactComponent as TsIcon } from "../../assets/TechIcons/Typescript.svg";
-import { ReactComponent as ReactIcon } from "../../assets/TechIcons/React.svg";
-import { ReactComponent as NodeIcon } from "../../assets/TechIcons/Node.svg";
+import { ReactComponent as JsIcon } from "../../Assets/TechIcons/Javascript.svg";
+import { ReactComponent as TsIcon } from "../../Assets/TechIcons/Typescript.svg";
+import { ReactComponent as ReactIcon } from "../../Assets/TechIcons/React.svg";
+import { ReactComponent as NodeIcon } from "../../Assets/TechIcons/Node.svg";
 
-import { ReactComponent as AwsIcon } from "../../assets/TechIcons/AWS.svg";
+import { ReactComponent as AwsIcon } from "../../Assets/TechIcons/AWS.svg";
 
 function Techstack() {
   return (
@@ -37,7 +36,6 @@ function Techstack() {
         <div className="tech-icons-text">Git</div>
       </Col>
 
-      {/* Keep these if you want, but they read more “web stack” than robotics */}
       <Col xs={6} md={3} className="tech-icons">
         <JsIcon className="tech-icon-svg" aria-label="JavaScript" />
         <div className="tech-icons-text">JavaScript</div>

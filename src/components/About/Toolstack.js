@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-import { ReactComponent as MacIcon } from "../../assets/techicons/Apple MacOSX.svg";
-import { ReactComponent as ChromeIcon } from "../../assets/techicons/Google Chrome.svg";
-import { ReactComponent as VsCodeIcon } from "../../assets/techicons/vscode.svg";
-import { ReactComponent as IntelliJIcon } from "../../assets/techicons/intellij-idea.svg";
+import { ReactComponent as MacIcon } from "../../Assets/TechIcons/Apple MacOSX.svg";
+import { ReactComponent as ChromeIcon } from "../../Assets/TechIcons/Google Chrome.svg";
+import { ReactComponent as VsCodeIcon } from "../../Assets/TechIcons/vscode.svg";
+import { ReactComponent as IntelliJIcon } from "../../Assets/TechIcons/intellij-idea.svg";
 
 function Toolstack() {
   return (
