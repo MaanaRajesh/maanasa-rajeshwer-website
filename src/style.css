@@ -651,21 +651,18 @@ button:focus,
   }
 }
 
+.tech-icon-svg {
+  width: 65px;
+  height: 65px;
+  color: var(--cream);
+}
 
-
-
-
-.tech-icon-svg,
 .tech-icon-img {
   width: 65px;
   height: 65px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
-}
-
-.tech-icon-svg{
-  color: var(--cream);
 }
 
 .tech-icon-images {
@@ -688,9 +685,6 @@ button:focus,
 @media (max-width: 767px) {
   .about-img {
     padding-top: 0 !important;
-  }
-  .tech-icons {
-    margin: 10px !important;
   }
 }
 
