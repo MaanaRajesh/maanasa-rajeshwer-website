@@ -597,27 +597,23 @@ button:focus,
   box-shadow: 0 12px 28px rgba(200, 120, 57, 0.30) !important;
 }
 
-.tech-icon-svg {
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
-  display: block;
-
-  color: var(--cream);
+.stack-section-title {
+  font-size: 1.2rem;
+  margin: 12px 0 6px 0;
+  opacity: 0.9;
 }
 
-/* Tech / tool icons: consistent sizing */
 .tech-icon-svg,
 .tech-icon-img {
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
-/* SVGs inherit theme color if their paths use currentColor */
-.tech-icon-svg {
-  color: var(--cream);
+tech-icon-svg{
+  color: var(--cream)
 }
 
 /* PNGs: optional “tinted” look (adjust if you hate it) */
