@@ -214,7 +214,7 @@ button:focus,
 
 /* nav links */
 .navbar-nav .nav-link {
-  color: white !important;
+  color: var(--maroon) !important;
   padding: 0.8rem 1rem !important;
 }
 
@@ -289,7 +289,7 @@ button:focus,
 .home-content {
   padding: 12rem 0 4rem !important;
   text-align: left;
-  color: maroon;
+  color: clay;
 }
 
 /* wave (optional - safe to delete if you remove emoji) */
@@ -337,7 +337,7 @@ button:focus,
   margin-top: 1.5rem;
   font-size: 1.2rem;
   font-weight: 400;
-  color: rgba(245, 236, 171, 0.85);
+  color: var(--maroon);
   max-width: 480px;
   line-height: 1.6;
 

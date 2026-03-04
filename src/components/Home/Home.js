@@ -42,7 +42,7 @@ function Home() {
           <h1 style={{ paddingTop: "40px" }}>
             Contact <span className="purple">Me</span>
           </h1>
-          <p style={{ color: "white" }}>
+          <p style={{ color: "black" }}>
             Want to collaborate or chat? Please reach out!
           </p>
 
