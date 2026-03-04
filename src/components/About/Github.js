@@ -8,7 +8,6 @@ function Github() {
       style={{
         justifyContent: "center",
         paddingBottom: "10px",
-        color: "white",
       }}
     >
       <h1 className="project-heading pb-4" style={{ paddingBottom: "20px", color: "var(--rust)" }}>
@@ -18,8 +17,14 @@ function Github() {
         username="MaanaRajesh"
         blockSize={30}
         blockMargin={10}
-        color="#C6BA4C"
         fontSize={20}
+        theme={{
+          level0: "rgba(198, 186, 76, 0.20)",
+          level1: "rgba(149, 56, 13, 0.35)",
+          level2: "rgba(149, 56, 13, 0.55)",
+          level3: "rgba(149, 56, 13, 0.78)",
+          level4: "#95380D",
+        }}
       />
     </Row>
   );

@@ -67,6 +67,7 @@ export function StackSection({ title, items, paddingBottom = "26px" }) {
             xs={6}
             sm={4}
             md={2}
+            lg={1}
             className="d-flex justify-content-center"
           >
             <div className="tech-icons">

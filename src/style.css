@@ -50,8 +50,25 @@ html {
   --serif-spacing: 0.04em;
 }
 
-#root, .App {
+#root {
   background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Sticky footer: each page wrapper grows to fill available space */
+.home-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -146,8 +163,8 @@ button:focus,
 }
 
 .sticky {
-  background-color: #1b1a2ea9 !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+  background-color: rgba(200, 120, 57, 0.82) !important;
+  box-shadow: 0px 10px 10px 0px rgba(71, 15, 12, 0.20) !important;
   backdrop-filter: blur(15px) !important;
 }
 
@@ -157,8 +174,8 @@ button:focus,
 
 /* Logo sizing (prevents squish) */
 .logo {
-  height: 42px !important;
-  width: 42px !important;
+  height: 54px !important;
+  width: 54px !important;
   object-fit: contain;
   display: block;
 }
@@ -447,9 +464,14 @@ button:focus,
   text-align: center !important;
   font-size: 1.2em !important;
   line-height: 2em !important;
-  background: var(--rust) !important;
+  background: var(--olive) !important;
   border-radius: 50% !important;
   transition: 0.5s !important;
+}
+
+/* Olive drop-shadow on hero image */
+.home-hero-img {
+  filter: drop-shadow(0 8px 28px rgba(198, 186, 76, 0.45));
 }
 
 .home-social-icons::before {
@@ -528,13 +550,19 @@ button:focus,
 /* UPDATED: modern hover pop */
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(71, 15, 12, 0.35) !important;
-  color: var(--rust) !important;
+  color: var(--maroon) !important;
   background-color: var(--cream) !important;
   opacity: 0.95 !important;
   height: 100% !important;
 
   transition: transform 0.35s ease, box-shadow 0.35s ease !important;
   will-change: transform;
+}
+
+.project-card-view .card-title,
+.project-card-view .card-text,
+.project-card-view .project-card-text {
+  color: var(--maroon) !important;
 }
 
 .project-card-view:hover {
@@ -557,15 +585,16 @@ button:focus,
 
 /* buttons */
 .btn-primary {
-  background-color: var(--maroon) !important;
-  border-color: var(--rust) !important;
-  color: var(--cream) !important;
+  background-color: var(--rust) !important;
+  border: none !important;
+  color: var(--olive) !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--rust) !important;
-  border-color: var(--rust) !important;
+  background-color: var(--maroon) !important;
+  border: none !important;
   color: var(--olive) !important;
+  box-shadow: 0 4px 14px rgba(71, 15, 12, 0.40) !important;
 }
 
 /* =========================================================
@@ -638,8 +667,8 @@ button:focus,
 
 /* Uses Bootstrap gutter variables to create spacing between tiles */
 .stack-grid {
-  --bs-gutter-x: 1.35rem;
-  --bs-gutter-y: 1.35rem;
+  --bs-gutter-x: 0.5rem;
+  --bs-gutter-y: 0.75rem;
   margin-top: 10px;
 }
 
@@ -654,15 +683,15 @@ button:focus,
   text-transform: uppercase;
 }
 
-/* Tile container (smaller + not touching) */
+/* Tile container */
 .tech-icons {
   display: flex !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 122px;              /* smaller than before */
-  padding: 12px 14px !important;
+  height: 130px;
+  padding: 10px 8px !important;
   border-radius: 22px !important;
 
   background: linear-gradient(135deg, rgba(198, 186, 76, 0.22), rgba(198, 186, 76, 0.08));
@@ -701,6 +730,16 @@ button:focus,
   color: var(--maroon);
   font-size: 0.85rem;
   letter-spacing: 0.10em;
+}
+
+/* About-page headings override (project-heading uses !important cream elsewhere) */
+.about-section .project-heading {
+  color: var(--rust) !important;
+}
+
+/* GitHub calendar text labels */
+.react-activity-calendar text {
+  fill: var(--maroon) !important;
 }
 
 /* Mobile tweaks */

@@ -6,7 +6,7 @@ import { SOCIAL_LINKS } from "../../data/socialLinks";
 
 function Home() {
   return (
-    <section>
+    <section className="home-page">
       <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
@@ -25,7 +25,7 @@ function Home() {
               <img
                 src={home_humanrobot}
                 alt="home pic"
-                className="img-fluid"
+                className="home-hero-img img-fluid"
                 style={{ maxHeight: "450px" }}
               />
             </Col>
@@ -35,10 +35,10 @@ function Home() {
 
       <Container>
         <Row className="home-about-social">
-          <h1 style={{ paddingTop: "40px" }}>
-            Contact <span className="purple">Me</span>
+          <h1 style={{ paddingTop: "40px", color: "black" }}>
+            Contact Me
           </h1>
-          <p style={{ color: "black" }}>
+          <p style={{ color: "var(--maroon)" }}>
             Want to collaborate or chat? Please reach out!
           </p>
 
