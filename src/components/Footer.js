@@ -24,7 +24,7 @@ function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: "white" }}
+                  style={{ color: "#F5ECAB" }}
                   aria-label={label}
                 >
                   <Icon />

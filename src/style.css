@@ -142,6 +142,7 @@ button:focus,
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
   transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 4px 10px 0px rgba(9, 5, 29, 0.12) !important;
 }
 
 .sticky {
@@ -326,6 +327,7 @@ button:focus,
   font-weight: 600;
   line-height: 1.1;
   padding-left: 0 !important;
+  color: var(--clay) !important;
 }
 
 .main-name {
@@ -526,9 +528,9 @@ button:focus,
 /* UPDATED: modern hover pop */
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(71, 15, 12, 0.35) !important;
-  color: var(--cream) !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
+  color: var(--rust) !important;
+  background-color: var(--cream) !important;
+  opacity: 0.95 !important;
   height: 100% !important;
 
   transition: transform 0.35s ease, box-shadow 0.35s ease !important;
@@ -557,12 +559,13 @@ button:focus,
 .btn-primary {
   background-color: var(--maroon) !important;
   border-color: var(--rust) !important;
-  color: var(--maroon) !important;
+  color: var(--cream) !important;
 }
 
 .btn-primary:hover {
   background-color: var(--rust) !important;
   border-color: var(--rust) !important;
+  color: var(--olive) !important;
 }
 
 /* =========================================================
@@ -645,7 +648,7 @@ button:focus,
   font-size: 1.05rem;
   margin: 10px 0 8px 0;
   opacity: 0.95;
-  color: rgba(245, 236, 171, 0.92);
+  color: var(--maroon);
   text-align: center;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -662,9 +665,9 @@ button:focus,
   padding: 12px 14px !important;
   border-radius: 22px !important;
 
-  background: rgba(10, 9, 18, 0.35);
-  outline: 1.4px solid rgba(198, 186, 76, 0.45) !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+  background: linear-gradient(135deg, rgba(198, 186, 76, 0.22), rgba(198, 186, 76, 0.08));
+  outline: 1.4px solid rgba(198, 186, 76, 0.50) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10) !important;
 
   transition: transform 0.25s ease, outline-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -682,16 +685,6 @@ button:focus,
   object-fit: contain;
   display: block;
   margin: 0 auto;
-
-  /* Make ALL PNG icons uniform cream */
-  filter:
-    grayscale(1)
-    brightness(0)
-    invert(1)
-    sepia(1)
-    saturate(6)
-    hue-rotate(345deg)
-    opacity(0.92);
 }
 
 /* If you ever add back inline SVG icons, keep them uniform too */
@@ -705,7 +698,7 @@ button:focus,
 .tech-icons-text {
   margin-top: 10px;
   text-align: center;
-  color: rgba(245, 236, 171, 0.92);
+  color: var(--maroon);
   font-size: 0.85rem;
   letter-spacing: 0.10em;
 }
@@ -725,8 +718,15 @@ button:focus,
 /* Keep your existing quote card / about activities */
 .quote-card-view {
   border: none !important;
-  color: white !important;
   background-color: transparent !important;
+}
+
+.quote-card-view,
+.quote-card-view p,
+.quote-card-view li,
+.quote-card-view .purple,
+.quote-card-view strong {
+  color: black !important;
 }
 
 .about-activity {
@@ -739,6 +739,22 @@ button:focus,
   .about-img {
     padding-top: 0 !important;
   }
+}
+
+/* =========================================================
+   RESUME PAGE
+   ========================================================= */
+
+.resume-page {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-section {
+  padding-top: 150px !important;
+  padding-bottom: 50px !important;
+  flex: 1;
 }
 
 .resume .resume-title {
@@ -802,6 +818,10 @@ button:focus,
   padding: 0.25rem 1.1rem !important;
   vertical-align: middle !important;
   text-align: center !important;
+}
+
+.fork-btn-inner svg {
+  color: var(--cream) !important;
 }
 
 .fork-btn-inner:hover {

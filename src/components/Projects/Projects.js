@@ -69,10 +69,6 @@ function Projects() {
         <h1 className="project-heading">
           Selected <strong className="purple">Projects</strong>
         </h1>
-        <p style={{ color: "white" }}>
-          A few projects across embodied AI, perception, and interaction. Each card links to code, reports, or demos.
-        </p>
-
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {PROJECTS.map((project) => (
             <Col key={project.title} md={4} className="project-card">

@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import home_humanrobot from "../../Assets/home-humanrobot.jpeg";
 import Particle from "../Particle";
-import Home2 from "./Home2";
 import { SOCIAL_LINKS } from "../../data/socialLinks";
 
 function Home() {
@@ -33,8 +32,6 @@ function Home() {
           </Row>
         </Container>
       </Container>
-
-      <Home2 />
 
       <Container>
         <Row className="home-about-social">
