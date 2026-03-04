@@ -2,11 +2,11 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 
 // Core
-import pythonSvg from "../../Assets/TechIcons/Python.svg";
-import cppSvg from "../../Assets/TechIcons/C++.svg";
-import pytorchSvg from "../../Assets/TechIcons/pytorch.svg";
-import ros2Svg from "../../Assets/TechIcons/ros2.svg";
-
+import pythonPng from "../../Assets/TechIcons/Python.png";
+import cppPng from "../../Assets/TechIcons/C++.png";
+import pytorchPng from "../../Assets/TechIcons/pytorch.png";
+import ros2Png from "../../Assets/TechIcons/ros2.png";
+import mlflowPng from "../../Assets/TechIcons/mlflow.png";
 import numpyPng from "../../Assets/TechIcons/numpy.png";
 import opencvPng from "../../Assets/TechIcons/opencv.png";
 
@@ -16,23 +16,24 @@ import isaacPng from "../../Assets/TechIcons/Isaac.png";
 import gazeboPng from "../../Assets/TechIcons/gazebo.png";
 
 // Infra
-import dockerSvg from "../../Assets/TechIcons/Docker.svg";
-import gitSvg from "../../Assets/TechIcons/Git.svg";
+import dockerPng from "../../Assets/TechIcons/Docker.png";
+import gitPng from "../../Assets/TechIcons/github.png";
 
 /**
  * Add/remove items here only.
- * type: "svg" | "png"
+ * type: "Png" | "png"
  */
 const SECTIONS = [
   {
     title: "Core",
     items: [
-      { label: "Python", src: pythonSvg, type: "svg" },
-      { label: "C++", src: cppSvg, type: "svg" },
+      { label: "Python", src: pythonPng, type: "png" },
+      { label: "C++", src: cppPng, type: "png" },
       { label: "NumPy", src: numpyPng, type: "png" },
+      { label: "MLflow", src: mlflowPng, type:"png" },
       { label: "OpenCV", src: opencvPng, type: "png" },
-      { label: "PyTorch", src: pytorchSvg, type: "svg" },
-      { label: "ROS2", src: ros2Svg, type: "svg" },
+      { label: "PyTorch", src: pytorchPng, type: "png" },
+      { label: "ROS2", src: ros2Png, type: "png" },
     ],
   },
   {
@@ -46,8 +47,8 @@ const SECTIONS = [
   {
     title: "Infra",
     items: [
-      { label: "Docker", src: dockerSvg, type: "svg" },
-      { label: "Git", src: gitSvg, type: "svg" },
+      { label: "Docker", src: dockerPng, type: "png" },
+      { label: "Git", src: gitPng, type: "png" },
     ],
   },
 ];
@@ -67,7 +68,7 @@ function StackSection({ title, items }) {
             <img
               src={item.src}
               alt={item.label}
-              className={item.type === "svg" ? "tech-icon-svg" : "tech-icon-img"}
+              className={item.type === "png" ? "tech-icon-png" : "tech-icon-img"}
             />
             <div className="tech-icons-text">{item.label}</div>
           </Col>
