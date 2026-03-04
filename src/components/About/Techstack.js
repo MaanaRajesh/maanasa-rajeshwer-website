@@ -52,17 +52,25 @@ const SECTIONS = [
 function StackSection({ title, items }) {
   return (
     <>
-      <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-        <Col xs={12}>
-          <h3 className="stack-section-title">{title}</h3>
+      <Row style={{ justifyContent: "center", paddingBottom: "6px" }}>
+        <Col xs={12} style={{ textAlign: "center" }}>
+          <div className="stack-section-title">{title}</div>
         </Col>
       </Row>
 
-      <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom: "35px" }}>
+      <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom: "26px" }}>
         {items.map((item) => (
-          <Col key={item.label} xs={6} md={3} lg={2} className="tech-icons">
-            <img src={item.src} alt={item.label} className="tech-icon-img" />
-            <div className="tech-icons-text">{item.label}</div>
+          <Col
+            key={item.label}
+            xs={6}
+            sm={4}
+            md={2}
+            className="d-flex justify-content-center"
+          >
+            <div className="tech-icons">
+              <img src={item.src} alt={item.label} className="tech-icon-img" />
+              <div className="tech-icons-text">{item.label}</div>
+            </div>
           </Col>
         ))}
       </Row>
@@ -70,7 +78,7 @@ function StackSection({ title, items }) {
   );
 }
 
-export default function Techstack() {
+function Techstack() {
   return (
     <div>
       {SECTIONS.map((section) => (
@@ -79,3 +87,5 @@ export default function Techstack() {
     </div>
   );
 }
+
+export default Techstack;
