@@ -3,8 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import home_humanrobot from "../../Assets/home-humanrobot.jpeg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { SOCIAL_LINKS } from "../../data/socialLinks";
 
 function Home() {
   return (
@@ -47,41 +46,19 @@ function Home() {
           </p>
 
           <ul className="home-about-social-links">
-            <li className="social-icons">
-              <a
-                href="mailto:maanasa@seas.upenn.edu"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour home-social-icons"
-                aria-label="Email"
-              >
-                <AiOutlineMail />
-              </a>
-            </li>
-
-            <li className="social-icons">
-              <a
-                href="https://github.com/MaanaRajesh/"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour home-social-icons"
-                aria-label="GitHub"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/maanasa-rajeshwer/"
-                target="_blank"
-                rel="noreferrer"
-                className="icon-colour home-social-icons"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+            {SOCIAL_LINKS.map(({ href, Icon, label }) => (
+              <li key={label} className="social-icons">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                  aria-label={label}
+                >
+                  <Icon />
+                </a>
+              </li>
+            ))}
           </ul>
         </Row>
       </Container>

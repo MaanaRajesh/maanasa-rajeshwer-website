@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { StackSection } from "./Techstack";
 
 import ubuntuPng from "../../Assets/TechIcons/ubuntu.png";
 import vscodePng from "../../Assets/TechIcons/vscode.png";
@@ -16,24 +16,7 @@ const ITEMS = [
 ];
 
 function Toolstack() {
-  return (
-    <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom: "40px" }}>
-      {ITEMS.map((item) => (
-        <Col
-          key={item.label}
-          xs={6}
-          sm={4}
-          md={2}
-          className="d-flex justify-content-center"
-        >
-          <div className="tech-icons">
-            <img src={item.src} alt={item.label} className="tech-icon-img" />
-            <div className="tech-icons-text">{item.label}</div>
-          </div>
-        </Col>
-      ))}
-    </Row>
-  );
+  return <StackSection items={ITEMS} paddingBottom="40px" />;
 }
 
 export default Toolstack;

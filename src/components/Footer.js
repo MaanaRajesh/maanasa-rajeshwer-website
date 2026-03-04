@@ -1,11 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { SOCIAL_LINKS } from "../data/socialLinks";
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <Container fluid className="footer">
       <Row>
@@ -14,47 +13,24 @@ function Footer() {
         </Col>
 
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} Maanasa Rajeshwer</h3>
+          <h3>Copyright © {CURRENT_YEAR} Maanasa Rajeshwer</h3>
         </Col>
 
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
-            {/* Email */}
-            <li className="social-icons">
-              <a
-                href="mailto:maanasa@seas.upenn.edu"
-                style={{ color: "white" }}
-                aria-label="Email"
-              >
-                <AiOutlineMail />
-              </a>
-            </li>
-
-            {/* GitHub */}
-            <li className="social-icons">
-              <a
-                href="https://github.com/MaanaRajesh"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-
-            {/* LinkedIn */}
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/maanasa-rajeshwer/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+            {SOCIAL_LINKS.map(({ href, Icon, label }) => (
+              <li key={label} className="social-icons">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "white" }}
+                  aria-label={label}
+                >
+                  <Icon />
+                </a>
+              </li>
+            ))}
           </ul>
         </Col>
       </Row>

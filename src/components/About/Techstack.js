@@ -49,16 +49,18 @@ const SECTIONS = [
   },
 ];
 
-function StackSection({ title, items }) {
+export function StackSection({ title, items, paddingBottom = "26px" }) {
   return (
     <>
-      <Row style={{ justifyContent: "center", paddingBottom: "6px" }}>
-        <Col xs={12} style={{ textAlign: "center" }}>
-          <div className="stack-section-title">{title}</div>
-        </Col>
-      </Row>
+      {title && (
+        <Row style={{ justifyContent: "center", paddingBottom: "6px" }}>
+          <Col xs={12} style={{ textAlign: "center" }}>
+            <div className="stack-section-title">{title}</div>
+          </Col>
+        </Row>
+      )}
 
-      <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom: "26px" }}>
+      <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom }}>
         {items.map((item) => (
           <Col
             key={item.label}
