@@ -163,8 +163,8 @@ button:focus,
 }
 
 .sticky {
-  background-color: rgba(200, 120, 57, 0.82) !important;
-  box-shadow: 0px 10px 10px 0px rgba(71, 15, 12, 0.20) !important;
+  background-color: rgba(198, 186, 76, 0.88) !important;
+  box-shadow: 0px 10px 10px 0px rgba(71, 15, 12, 0.18) !important;
   backdrop-filter: blur(15px) !important;
 }
 
@@ -174,8 +174,8 @@ button:focus,
 
 /* Logo sizing (prevents squish) */
 .logo {
-  height: 54px !important;
-  width: 54px !important;
+  height: 64px !important;
+  width: 64px !important;
   object-fit: contain;
   display: block;
 }
@@ -344,7 +344,7 @@ button:focus,
   font-weight: 600;
   line-height: 1.1;
   padding-left: 0 !important;
-  color: var(--clay) !important;
+  color: black !important;
 }
 
 .main-name {
@@ -356,7 +356,7 @@ button:focus,
   margin-top: 1.5rem;
   font-size: 1.2rem;
   font-weight: 400;
-  color: var(--maroon);
+  color: var(--clay);
   max-width: 480px;
   line-height: 1.6;
 
@@ -469,9 +469,9 @@ button:focus,
   transition: 0.5s !important;
 }
 
-/* Olive drop-shadow on hero image */
+/* Simple dark shadow on hero image */
 .home-hero-img {
-  filter: drop-shadow(0 8px 28px rgba(198, 186, 76, 0.45));
+  filter: drop-shadow(4px 6px 14px rgba(0, 0, 0, 0.45));
 }
 
 .home-social-icons::before {
@@ -550,8 +550,8 @@ button:focus,
 /* UPDATED: modern hover pop */
 .project-card-view {
   box-shadow: 0 4px 5px 3px rgba(71, 15, 12, 0.35) !important;
-  color: var(--maroon) !important;
-  background-color: var(--cream) !important;
+  color: var(--cream) !important;
+  background-color: var(--maroon) !important;
   opacity: 0.95 !important;
   height: 100% !important;
 
@@ -562,7 +562,22 @@ button:focus,
 .project-card-view .card-title,
 .project-card-view .card-text,
 .project-card-view .project-card-text {
-  color: var(--maroon) !important;
+  color: var(--cream) !important;
+}
+
+/* Project card buttons: cream → olive on hover, black text */
+.project-btn {
+  background-color: var(--cream) !important;
+  color: black !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.project-btn:hover {
+  background-color: var(--olive) !important;
+  color: black !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .project-card-view:hover {
@@ -571,7 +586,7 @@ button:focus,
 }
 
 .project-heading {
-  color: var(--cream) !important;
+  color: var(--cream);
   font-size: 2.3em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
@@ -583,18 +598,17 @@ button:focus,
   word-spacing: normal;
 }
 
-/* buttons */
+/* buttons (global — used for Download CV) */
 .btn-primary {
   background-color: var(--rust) !important;
   border: none !important;
-  color: var(--olive) !important;
+  color: var(--cream) !important;
 }
 
 .btn-primary:hover {
   background-color: var(--maroon) !important;
   border: none !important;
-  color: var(--olive) !important;
-  box-shadow: 0 4px 14px rgba(71, 15, 12, 0.40) !important;
+  color: var(--cream) !important;
 }
 
 /* =========================================================
@@ -677,7 +691,7 @@ button:focus,
   font-size: 1.05rem;
   margin: 10px 0 8px 0;
   opacity: 0.95;
-  color: var(--maroon);
+  color: var(--clay);
   text-align: center;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -690,7 +704,7 @@ button:focus,
   align-items: center;
   justify-content: center;
 
-  height: 130px;
+  height: 140px;
   padding: 10px 8px !important;
   border-radius: 22px !important;
 
@@ -703,14 +717,14 @@ button:focus,
 
 .tech-icons:hover {
   transform: translateY(-3px) scale(1.03);
-  outline-color: rgba(200, 120, 57, 0.70) !important;
-  box-shadow: 0 18px 38px rgba(200, 120, 57, 0.18) !important;
+  outline-color: rgba(198, 186, 76, 0.90) !important;
+  box-shadow: 0 18px 38px rgba(198, 186, 76, 0.20) !important;
 }
 
-/* Icon sizing (smaller) */
+/* Icon sizing */
 .tech-icon-img {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
@@ -732,9 +746,9 @@ button:focus,
   letter-spacing: 0.10em;
 }
 
-/* About-page headings override (project-heading uses !important cream elsewhere) */
+/* About-page headings: rust by default; "Professional Skillset" overrides inline to black */
 .about-section .project-heading {
-  color: var(--rust) !important;
+  color: var(--rust);
 }
 
 /* GitHub calendar text labels */

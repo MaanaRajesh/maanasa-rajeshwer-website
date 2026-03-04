@@ -15,7 +15,7 @@ function About() {
         <Container>
           <Row className="align-items-center" style={{ paddingTop: "30px" }}>
             <Col md={7} style={{ paddingBottom: "40px" }}>
-              <h1 style={{ fontSize: "2.2em", marginBottom: "18px", color: "var(--rust)" }}>
+              <h1 style={{ fontSize: "2.2em", marginBottom: "18px", color: "black" }}>
                 About
               </h1>
               <AboutCard />
@@ -26,13 +26,13 @@ function About() {
             </Col>
           </Row>
 
-          <h2 className="project-heading" style={{ marginTop: "10px", color: "var(--rust)" }}>
-            Professional <strong style={{ color: "var(--rust)" }}>Skillset</strong>
+          <h2 className="project-heading" style={{ marginTop: "10px", color: "black" }}>
+            Professional Skillset
           </h2>
           <Techstack />
 
-          <h2 className="project-heading" style={{ marginTop: "30px", color: "var(--rust)" }}>
-            Tools <strong style={{ color: "var(--rust)" }}>I use</strong>
+          <h2 className="project-heading" style={{ marginTop: "30px" }}>
+            Tools I use
           </h2>
           <Toolstack />
 

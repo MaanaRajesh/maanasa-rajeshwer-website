@@ -66,8 +66,8 @@ function Projects() {
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          Selected <strong className="purple">Projects</strong>
+        <h1 className="project-heading" style={{ color: "black" }}>
+          Selected Projects
         </h1>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {PROJECTS.map((project) => (

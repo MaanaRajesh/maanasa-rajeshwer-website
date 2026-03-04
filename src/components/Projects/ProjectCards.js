@@ -14,17 +14,17 @@ function ProjectCards(props) {
           {props.description}
         </Card.Text>
         {props.ghLink && (
-          <Button variant="primary" href={props.ghLink} target="_blank" rel="noreferrer">
+          <Button variant="primary" className="project-btn" href={props.ghLink} target="_blank" rel="noreferrer">
             <BsGithub /> &nbsp; GitHub
           </Button>
         )}
         {props.demoLink && (
-          <Button variant="primary" href={props.demoLink} target="_blank" rel="noreferrer" style={{ marginLeft: "10px" }}>
+          <Button variant="primary" className="project-btn" href={props.demoLink} target="_blank" rel="noreferrer" style={{ marginLeft: "10px" }}>
             <CgWebsite /> &nbsp; Demo
           </Button>
         )}
         {props.reportLink && (
-          <Button variant="secondary" href={props.reportLink} target="_blank" rel="noreferrer" style={{ marginLeft: "10px" }}>
+          <Button variant="secondary" className="project-btn" href={props.reportLink} target="_blank" rel="noreferrer" style={{ marginLeft: "10px" }}>
             📄 Report
           </Button>
         )}

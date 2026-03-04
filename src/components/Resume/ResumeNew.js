@@ -42,7 +42,7 @@ function ResumeNew() {
           </Document>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "30px" }}>
           <Button
             variant="primary"
             href={pdf}

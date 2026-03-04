@@ -38,7 +38,7 @@ function Home() {
           <h1 style={{ paddingTop: "40px", color: "black" }}>
             Contact Me
           </h1>
-          <p style={{ color: "var(--maroon)" }}>
+          <p style={{ color: "var(--clay)" }}>
             Want to collaborate or chat? Please reach out!
           </p>
 
