@@ -27,7 +27,7 @@ function About() {
           </Row>
 
           <div style={{
-            background: "rgba(149, 56, 13, 0.18)",
+            background: "rgba(107, 114, 42, 0.25)",
             borderRadius: "18px",
             padding: "28px 20px 36px",
             marginTop: "30px",
@@ -37,8 +37,8 @@ function About() {
             </h2>
             <Techstack />
 
-            <h2 className="project-heading" style={{ marginTop: "30px" }}>
-              Tools I use
+            <h2 className="project-heading" style={{ marginTop: "30px", color: "black", fontWeight: "normal" }}>
+              Tools I Use
             </h2>
             <Toolstack />
 

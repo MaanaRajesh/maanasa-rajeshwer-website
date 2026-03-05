@@ -10,8 +10,8 @@ function Github() {
         paddingBottom: "10px",
       }}
     >
-      <h1 className="project-heading pb-4" style={{ paddingBottom: "20px", color: "var(--rust)" }}>
-        Days I <strong style={{ color: "var(--rust)" }}>Code</strong>
+      <h1 className="project-heading pb-4" style={{ paddingBottom: "20px", color: "black", fontWeight: "normal" }}>
+        Days I Code
       </h1>
       <GitHubCalendar
         username="MaanaRajesh"
