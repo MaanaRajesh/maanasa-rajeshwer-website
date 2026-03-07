@@ -638,6 +638,7 @@ button:focus,
   padding-top: 90px !important;
   padding-bottom: 30px !important;
   background: rgba(71, 15, 12, 0.55) !important;
+  flex: 1;
 }
 
 .project-card {
