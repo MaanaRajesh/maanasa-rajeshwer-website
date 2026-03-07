@@ -10,24 +10,34 @@ function Home() {
       <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
-          <Row>
+          <Row className="align-items-center">
             <Col md={7} className="home-header">
-              <h1 className="heading-name">
+              <h1 className="heading-name" data-aos="fade-up">
                 MAANASA RAJESHWER
               </h1>
 
-              <p className="hero-subtitle">
+              <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
                 Engineering embodied intelligence, grounded in human intuition.
               </p>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={home_humanrobot}
-                alt="home pic"
-                className="home-hero-img img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+            <Col md={5} style={{ paddingBottom: 20 }} data-aos="fade-in" data-aos-delay="400">
+              <div style={{ position: "relative" }}>
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "50%",
+                  background: "radial-gradient(circle at 60% 40%, rgba(200,120,57,0.28), transparent 70%)",
+                  pointerEvents: "none",
+                  zIndex: 0,
+                }} />
+                <img
+                  src={home_humanrobot}
+                  alt="home pic"
+                  className="home-hero-img img-fluid"
+                  style={{ maxHeight: "450px", position: "relative", zIndex: 1 }}
+                />
+              </div>
             </Col>
           </Row>
         </Container>
@@ -35,7 +45,7 @@ function Home() {
 
       <Container>
         <Row className="home-about-social">
-          <h1 style={{ paddingTop: "40px", color: "black", fontSize: "2.8em", fontWeight: 600 }}>
+          <h1 style={{ paddingTop: "0px", color: "black", fontSize: "2.8em", fontWeight: 400, fontFamily: '"Bellefair", serif' }}>
             Contact Me
           </h1>
           <p style={{ color: "var(--clay)", fontSize: "1.35em", marginBottom: "1.2rem" }}>

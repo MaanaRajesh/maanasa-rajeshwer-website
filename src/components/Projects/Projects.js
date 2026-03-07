@@ -66,12 +66,13 @@ function Projects() {
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading" style={{ color: "black" }}>
+        <h1 className="project-heading" style={{ color: "black" }} data-aos="fade-up">
           Selected Projects
         </h1>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {PROJECTS.map((project) => (
-            <Col key={project.title} md={4} className="project-card">
+        <Row style={{ justifyContent: "center", paddingBottom: "4px" }}>
+          {PROJECTS.map((project, index) => (
+            <Col key={project.title} md={4} className="project-card"
+              data-aos="fade-up" data-aos-delay={index * 100}>
               <ProjectCard {...project} />
             </Col>
           ))}

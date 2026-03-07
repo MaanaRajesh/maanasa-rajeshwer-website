@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.jpeg";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import {
   AiFillStar,
@@ -18,10 +18,10 @@ import { CgFileDocument } from "react-icons/cg";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-
+  const { pathname } = useLocation();
   useEffect(() => {
     function scrollHandler() {
-      updateNavbar(window.scrollY >= 20);
+      updateNavbar(window.scrollY >= 1);
     }
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
@@ -32,7 +32,7 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={navColour || pathname === "/project" ? "sticky" : "navbar"}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">

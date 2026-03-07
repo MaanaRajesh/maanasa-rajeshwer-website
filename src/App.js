@@ -13,6 +13,8 @@ import {
   Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +23,8 @@ function App() {
   const [load, upadateLoad] = useState(true);
 
   useEffect(() => {
+    AOS.init({ duration: 700, once: true });
+
     const timer = setTimeout(() => {
       upadateLoad(false);
     }, 1200);

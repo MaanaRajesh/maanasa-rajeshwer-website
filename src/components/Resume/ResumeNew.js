@@ -30,13 +30,14 @@ function ResumeNew() {
           <Document
             file={pdf}
             onLoadSuccess={onDocumentLoadSuccess}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center flex-wrap"
+            style={{ gap: "16px" }}
           >
             {Array.from(new Array(numPages), (el, index) => (
               <Page
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
-                scale={width > 786 ? 1.7 : 0.6}
+                scale={width > 786 ? 0.85 : 0.5}
               />
             ))}
           </Document>

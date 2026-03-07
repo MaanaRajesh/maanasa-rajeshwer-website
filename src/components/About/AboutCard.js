@@ -32,19 +32,12 @@ function AboutCard() {
           </p>
           <p style={{ textAlign: "justify" }}>
             In her recent robotics work, Maanasa has explored problems such as{" "}
-            <span className="purple">identity-preserving video segmentation</span>
-            ,{" "}
-            <span className="purple">
-              multi-camera perception using bird's-eye-view representations
-            </span>
-            , and{" "}
-            <span className="purple">
-              imitation learning pipelines for robotic manipulation
-            </span>
-            . Across these projects, she is interested in building systems that
-            can perceive dynamic environments, maintain consistent
-            representations over time, and translate those representations into
-            meaningful physical actions.
+            <span className="purple">identity-preserving video segmentation</span>,{" "}
+            <span className="purple">multi-camera perception using bird's-eye-view representations</span>,
+            and <span className="purple">imitation learning pipelines for robotic manipulation</span>.
+            Across these projects, she is interested in building systems that can perceive dynamic
+            environments, maintain consistent representations over time, and translate those
+            representations into meaningful physical actions.
           </p>
           <p style={{ textAlign: "justify" }}>
             More broadly, she is motivated by the challenge of designing{" "}

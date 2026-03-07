@@ -1,8 +1,87 @@
 /* =========================================================
+   CANELA FONT FACES
+   ========================================================= */
+
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Thin-Trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-ThinItalic-Trial.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Light-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-LightItalic-Trial.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Regular-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-RegularItalic-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Medium-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-MediumItalic-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Bold-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-BoldItalic-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-Black-Trial.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("./Assets/Canela_Collection/Canela Family/Canela-BlackItalic-Trial.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* =========================================================
    THEME TOKENS (palette + semantic roles)
    ========================================================= */
 
 html {
+  font-size: 90%;
+
   /* palette */
   --rust: #95380D;
   --olive: #C6BA4C;
@@ -43,11 +122,11 @@ html {
   --stars-opacity: 0.15;
 
   /* About background overlay strength (lower = more cream visible) */
-  --about-overlay: rgba(245, 236, 171, 0.08);
+  --about-overlay: rgba(200, 120, 57, 0.08);
 
-  /* Elegant serif font stack (no Google Font needed) */
-  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Garamond, Georgia, serif;
-  --serif-spacing: 0.04em;
+  /* Canela with serif fallbacks */
+  --serif: "Canela", "Palatino Linotype", Palatino, Georgia, serif;
+  --serif-spacing: 0.02em;
 }
 
 #root {
@@ -98,6 +177,20 @@ body {
   color: var(--imp-text-color) !important;
 }
 
+/* =========================================================
+   BELLEFAIR — black text throughout (excluding footer,
+   about paragraphs, and colored elements)
+   ========================================================= */
+
+.about-section h1,
+.about-section h2,
+.project-section h1,
+.project-heading,
+.home-about-social p,
+.about-heading {
+  font-family: "Bellefair", serif !important;
+}
+
 /* remove bootstrap focus glow */
 button:focus,
 .btn:focus {
@@ -113,7 +206,7 @@ button:focus,
   position: fixed;
   inset: 0;
   z-index: 999999;
-  background-color: #0c0513;
+  background-color: #470F0C;
   background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -178,6 +271,7 @@ button:focus,
   width: 64px !important;
   object-fit: contain;
   display: block;
+  border-radius: 12px;
 }
 
 /* hamburger */
@@ -232,6 +326,8 @@ button:focus,
 
 /* nav links */
 .navbar-nav .nav-link {
+  font-family: "Bellefair", serif !important;
+  font-size: 1.2rem !important;
   color: var(--maroon) !important;
   padding: 0.8rem 1rem !important;
 }
@@ -305,7 +401,7 @@ button:focus,
 }
 
 .home-content {
-  padding: 12rem 0 4rem !important;
+  padding: 9rem 0 2rem !important;
   text-align: left;
   color: clay;
 }
@@ -338,10 +434,12 @@ button:focus,
 
 /* Name styling */
 .heading-name {
+  font-family: "Bellefair", serif !important;
   font-size: 3.2rem !important;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-weight: 600;
+  font-weight: 400;
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
   line-height: 1.1;
   padding-left: 0 !important;
   color: black !important;
@@ -354,7 +452,7 @@ button:focus,
 /* Subtitle styling + fade up */
 .hero-subtitle {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--clay);
   max-width: 480px;
@@ -439,7 +537,7 @@ button:focus,
 
 .home-about-social {
   text-align: center !important;
-  padding-top: 25px;
+  padding-top: 10px;
   color: rust !important;
 }
 
@@ -537,26 +635,60 @@ button:focus,
 
 .project-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 90px !important;
   padding-bottom: 30px !important;
   background: rgba(71, 15, 12, 0.55) !important;
 }
 
 .project-card {
-  padding: 50px 25px !important;
+  padding: 8px 12px !important;
   height: auto !important;
 }
 
 /* UPDATED: modern hover pop */
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(71, 15, 12, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(71, 15, 12, 0.55) !important;
   color: var(--cream) !important;
   background-color: var(--maroon) !important;
   opacity: 0.95 !important;
   height: 100% !important;
+  border-radius: 14px !important;
+  overflow: hidden;
 
   transition: transform 0.35s ease, box-shadow 0.35s ease !important;
   will-change: transform;
+}
+
+.project-card-view .card-img-top {
+  height: 130px;
+  object-fit: cover;
+}
+
+.project-card-view .card-body {
+  padding: 10px 12px !important;
+}
+
+.project-card-view .card-title {
+  font-size: 0.95rem !important;
+  margin-bottom: 0 !important;
+  background: black;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-top: -10px;
+  padding: 8px 12px 10px;
+}
+
+.project-card-view .card-text,
+.project-card-view .project-card-text {
+  font-size: 0.75rem !important;
+  line-height: 1.45 !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.project-card-view .project-btn {
+  font-size: 0.75rem !important;
+  padding: 3px 10px !important;
 }
 
 .project-card-view .card-title,
@@ -582,13 +714,20 @@ button:focus,
 
 .project-card-view:hover {
   transform: translateY(-6px) scale(1.03) !important;
-  box-shadow: 0 12px 28px rgba(200, 120, 57, 0.35) !important;
+  box-shadow: 0 18px 40px rgba(200, 120, 57, 0.55) !important;
 }
 
 .project-heading {
   color: var(--cream);
-  font-size: 2.3em !important;
+  font-size: 1.8em !important;
   font-weight: 500 !important;
+  padding-top: 4px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 4px !important;
+}
+
+.project-section .project-heading {
+  font-size: 2.2em !important;
   padding-top: 10px !important;
 }
 
@@ -661,19 +800,12 @@ button:focus,
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
+  padding-top: 90px !important;
   padding-bottom: 30px !important;
   color: maroon !important;
   background: transparent !important;
-
-  /* Cream texture background for ABOUT only */
-  background-image:
-    linear-gradient(to bottom, var(--about-overlay), rgba(245, 236, 171, 0.03)),
-    url(./Assets/creamtexture.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
+
 
 /* =========================================================
    Tech + Tool stacks
@@ -681,14 +813,22 @@ button:focus,
 
 /* Uses Bootstrap gutter variables to create spacing between tiles */
 .stack-grid {
-  --bs-gutter-x: 0.5rem;
-  --bs-gutter-y: 0.75rem;
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
   margin-top: 10px;
 }
 
-/* Section labels: Core / Simulation / Infra */
+/* Equal spacing across all icon groups */
+.stack-grid-tight {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 1.5rem;
+  margin-top: 10px;
+}
+
+/* Section labels: Core / Simulation / Infrastructure */
 .stack-section-title {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
+  font-weight: 700;
   margin: 10px 0 8px 0;
   opacity: 0.95;
   color: var(--clay);
@@ -704,27 +844,28 @@ button:focus,
   align-items: center;
   justify-content: center;
 
-  height: 140px;
+  height: 170px;
   padding: 10px 8px !important;
   border-radius: 22px !important;
 
-  background: linear-gradient(135deg, rgba(198, 186, 76, 0.22), rgba(198, 186, 76, 0.08));
-  outline: 1.4px solid rgba(198, 186, 76, 0.50) !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10) !important;
+  background: #F5ECAB;
+  outline: 1.4px solid rgba(149, 56, 13, 0.25) !important;
+  box-shadow: 0 6px 20px rgba(149, 56, 13, 0.30) !important;
 
   transition: transform 0.25s ease, outline-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tech-icons:hover {
   transform: translateY(-3px) scale(1.03);
-  outline-color: rgba(198, 186, 76, 0.90) !important;
-  box-shadow: 0 18px 38px rgba(198, 186, 76, 0.20) !important;
+  outline-color: rgba(149, 56, 13, 0.55) !important;
+  box-shadow: 0 12px 32px rgba(149, 56, 13, 0.40) !important;
 }
 
 /* Icon sizing */
 .tech-icon-img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
+  max-width: 100%;
   object-fit: contain;
   display: block;
   margin: 0 auto;
@@ -743,12 +884,14 @@ button:focus,
   text-align: center;
   color: var(--maroon);
   font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.10em;
 }
 
 /* About-page headings: rust by default; "Professional Skillset" overrides inline to black */
 .about-section .project-heading {
   color: var(--rust);
+  font-size: 2.6em !important;
 }
 
 /* GitHub calendar text labels */
@@ -782,6 +925,12 @@ button:focus,
   color: black !important;
 }
 
+.quote-card-view p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+
 .about-activity {
   list-style: none !important;
   text-align: left !important;
@@ -805,8 +954,8 @@ button:focus,
 }
 
 .resume-section {
-  padding-top: 150px !important;
-  padding-bottom: 50px !important;
+  padding-top: 130px !important;
+  padding-bottom: 90px !important;
   flex: 1;
 }
 

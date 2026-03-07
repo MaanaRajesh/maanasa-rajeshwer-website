@@ -19,7 +19,7 @@ function Github() {
         blockMargin={10}
         fontSize={20}
         theme={{
-          level0: "rgba(198, 186, 76, 0.20)",
+          level0: "#EDD5A3",
           level1: "rgba(149, 56, 13, 0.35)",
           level2: "rgba(149, 56, 13, 0.55)",
           level3: "rgba(149, 56, 13, 0.78)",

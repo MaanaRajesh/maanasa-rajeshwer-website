@@ -2,54 +2,54 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 
 // Core
-import pythonPng from "../../Assets/TechIcons/Python.png";
-import cppPng from "../../Assets/TechIcons/C++.png";
-import pytorchPng from "../../Assets/TechIcons/pytorch.png";
-import ros2Png from "../../Assets/TechIcons/ros2.png";
-import mlflowPng from "../../Assets/TechIcons/mlflow.png";
-import numpyPng from "../../Assets/TechIcons/numpy.png";
-import opencvPng from "../../Assets/TechIcons/opencv.png";
+import pythonPng    from "../../Assets/TechIcons/pythonpng.png";
+import cppPng       from "../../Assets/TechIcons/cpppng.png";
+import numpyPng     from "../../Assets/TechIcons/numpy.png";
+import opencvPng    from "../../Assets/TechIcons/opencvpng.png";
+import pytorchPng   from "../../Assets/TechIcons/pytorch.png";
+import ros2Png      from "../../Assets/TechIcons/ros2.png";
+import mlflowPng    from "../../Assets/TechIcons/mlflow.png";
 
 // Simulation
-import mujocoPng from "../../Assets/TechIcons/mujoco.png";
-import isaacPng from "../../Assets/TechIcons/Isaac.png";
-import gazeboPng from "../../Assets/TechIcons/gazebo.png";
+import mujocoPng    from "../../Assets/TechIcons/mujoco.png";
+import isaacPng     from "../../Assets/TechIcons/nvidiapng.png";
+import gazeboPng    from "../../Assets/TechIcons/gazebo.png";
 
-// Infra
-import dockerPng from "../../Assets/TechIcons/Docker.png";
-import gitPng from "../../Assets/TechIcons/github.png";
+// Infrastructure
+import ubuntuPng    from "../../Assets/TechIcons/ubuntu.png";
+import dockerPng    from "../../Assets/TechIcons/dockerpng.png";
 
 const SECTIONS = [
   {
     title: "Core",
     items: [
-      { label: "Python", src: pythonPng },
-      { label: "C++", src: cppPng },
-      { label: "NumPy", src: numpyPng },
-      { label: "OpenCV", src: opencvPng },
+      { label: "Python",  src: pythonPng  },
+      { label: "C++",     src: cppPng     },
+      { label: "NumPy",   src: numpyPng   },
+      { label: "OpenCV",  src: opencvPng  },
       { label: "PyTorch", src: pytorchPng },
-      { label: "ROS2", src: ros2Png },
-      { label: "MLflow", src: mlflowPng },
+      { label: "ROS2",    src: ros2Png    },
+      { label: "MLflow",  src: mlflowPng  },
     ],
   },
   {
     title: "Simulation",
     items: [
-      { label: "MuJoCo", src: mujocoPng },
-      { label: "Isaac Sim", src: isaacPng },
-      { label: "Gazebo", src: gazeboPng },
+      { label: "MuJoCo",    src: mujocoPng },
+      { label: "Isaac Sim", src: isaacPng  },
+      { label: "Gazebo",    src: gazeboPng },
     ],
   },
   {
-    title: "Infra",
+    title: "Infrastructure",
     items: [
+      { label: "Linux",  src: ubuntuPng },
       { label: "Docker", src: dockerPng },
-      { label: "Git", src: gitPng },
     ],
   },
 ];
 
-export function StackSection({ title, items, paddingBottom = "26px" }) {
+export function StackSection({ title, items, paddingBottom = "26px", rowMaxWidth, rowClassName = "stack-grid", colLg = 2 }) {
   return (
     <>
       {title && (
@@ -60,14 +60,15 @@ export function StackSection({ title, items, paddingBottom = "26px" }) {
         </Row>
       )}
 
-      <Row className="stack-grid" style={{ justifyContent: "center", paddingBottom }}>
+      <div style={rowMaxWidth ? { maxWidth: rowMaxWidth, margin: "0 auto" } : undefined}>
+      <Row className={rowClassName} style={{ justifyContent: "center", paddingBottom }}>
         {items.map((item) => (
           <Col
             key={item.label}
             xs={6}
             sm={4}
-            md={2}
-            lg={1}
+            md={3}
+            lg={colLg}
             className="d-flex justify-content-center"
           >
             <div className="tech-icons">
@@ -77,6 +78,7 @@ export function StackSection({ title, items, paddingBottom = "26px" }) {
           </Col>
         ))}
       </Row>
+      </div>
     </>
   );
 }
@@ -85,7 +87,13 @@ function Techstack() {
   return (
     <div>
       {SECTIONS.map((section) => (
-        <StackSection key={section.title} title={section.title} items={section.items} />
+        <StackSection
+          key={section.title}
+          title={section.title}
+          items={section.items}
+          rowClassName="stack-grid-tight"
+          colLg={1}
+        />
       ))}
     </div>
   );
